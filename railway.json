@@ -1,0 +1,19 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "services": {
+    "mssql-server": {
+      "build": {
+        "dockerfilePath": "./Dockerfile"
+      },
+      "deploy": {
+        "port": 1433,
+        "healthcheck": {
+          "port": 1433,
+          "timeout": 120,
+          "interval": 15,
+          "retries": 10
+        }
+      }
+    }
+  }
+}
